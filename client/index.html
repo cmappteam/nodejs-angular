@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Message Saving App</title>
+</head>
+<body ng-controller="AppCtrl as vm">
+    <div ng-form="inputForm">
+        <label for="message">Message</label>
+        <br>
+        <textarea ng-model="vm.msg" name="message"></textarea>
+        <br>
+        <button ng-click="vm.saveMsg()">Save</button>
+    </div>
+    <div class="messages">
+        <ul>
+            <li ng-repeat="message in vm.messages">
+                <span ng-bind="message.value"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
